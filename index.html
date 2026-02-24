@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nahid's Private Vault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;600;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="intro-screen">
+        <h2 class="welcome-text">WELCOME TO NAHID'S WORLD</h2>
+        <h1 class="cinematic-name">MD NAHID MAHMUD</h1>
+        <h3 class="cinematic-uni">SOUTHEAST UNIVERSITY</h3>
+        <div class="loader-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <div id="main-app" class="hidden">
+        
+        <div class="justice-banner">
+            <span class="hadi-text">JUSTICE FOR HADI</span>
+            <span class="separator">|</span>
+            <span class="palestine-text">FREE PALESTINE</span>
+        </div>
+
+        <header class="profile-header">
+            <h1 class="colorful-heading">NAHID'S PRIVATE PROPERTY</h1>
+            <p>Authorized Access Only. Welcome to my professional coding dimension.</p>
+            <a href="https://www.linkedin.com/in/mohammadnahidmahmud" target="_blank" class="linkedin-btn">
+                <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+            </a>
+        </header>
+
+        <div id="language-grid" class="grid-container">
+            <div class="lang-card" onclick="openVault('Java', '#f89820')">
+                <div class="icon-wrapper"><i class="fa-brands fa-java lang-icon" style="color: #f89820;"></i></div>
+                <h2>Java</h2>
+            </div>
+            <div class="lang-card" onclick="openVault('C++', '#00599C')">
+                <div class="icon-wrapper"><i class="fa-solid fa-c lang-icon" style="color: #00599C;"></i></div>
+                <h2>C++</h2>
+            </div>
+            <div class="lang-card" onclick="openVault('Python', '#3776AB')">
+                <div class="icon-wrapper"><i class="fa-brands fa-python lang-icon" style="color: #3776AB;"></i></div>
+                <h2>Python</h2>
+            </div>
+            <div class="lang-card" onclick="openVault('JavaScript', '#F7DF1E')">
+                <div class="icon-wrapper"><i class="fa-brands fa-js lang-icon" style="color: #F7DF1E;"></i></div>
+                <h2>JavaScript</h2>
+            </div>
+            <div class="lang-card" onclick="openVault('Web Dev', '#E44D26')">
+                <div class="icon-wrapper"><i class="fa-brands fa-html5 lang-icon" style="color: #E44D26;"></i></div>
+                <h2>Web Dev</h2>
+            </div>
+            <div class="lang-card" onclick="openVault('PHP', '#777BB4')">
+                <div class="icon-wrapper"><i class="fa-brands fa-php lang-icon" style="color: #777BB4;"></i></div>
+                <h2>PHP</h2>
+            </div>
+            <div class="lang-card" onclick="openVault('GoLang', '#00ADD8')">
+                <div class="icon-wrapper"><i class="fa-brands fa-golang lang-icon" style="color: #00ADD8;"></i></div>
+                <h2>GoLang</h2>
+            </div>
+            <div class="lang-card" onclick="openVault('Swift', '#F05138')">
+                <div class="icon-wrapper"><i class="fa-brands fa-swift lang-icon" style="color: #F05138;"></i></div>
+                <h2>Swift</h2>
+            </div>
+            <div class="lang-card" onclick="openVault('Database / SQL', '#4479A1')">
+                <div class="icon-wrapper"><i class="fa-solid fa-database lang-icon" style="color: #4479A1;"></i></div>
+                <h2>SQL / DB</h2>
+            </div>
+            <div class="lang-card" onclick="openVault('Others', '#10b981')">
+                <div class="icon-wrapper"><i class="fa-solid fa-laptop-code lang-icon" style="color: #10b981;"></i></div>
+                <h2>Others</h2>
+            </div>
+        </div>
+
+        <div id="vault-room" class="hidden">
+            <button class="back-btn" onclick="closeVault()">
+                <i class="fa-solid fa-arrow-left"></i> Return to Main Board
+            </button>
+            <h1 id="vault-title" class="vault-header">Language Vault</h1>
+
+            <div class="vault-container">
+                <div class="glass-panel upload-section">
+                    <h2><i class="fa-solid fa-cloud-arrow-up"></i> Upload to Nahid's Cloud</h2>
+                    
+                    <div class="input-group">
+                        <i class="fa-solid fa-pen-nib"></i>
+                        <input type="text" id="code-title" placeholder="Script Name (e.g. DFS Algorithm)">
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fa-solid fa-folder-tree"></i>
+                        <select id="code-category">
+                            <option value="Data Structures">Data Structures</option>
+                            <option value="Algorithms">Algorithms</option>
+                            <option value="Numerical Methods">Numerical Methods</option>
+                            <option value="Digital Logic">Digital Logic (DLD)</option>
+                            <option value="Lab Work">University Lab Work</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+
+                    <textarea id="code-content" placeholder="Paste your majestic code here..."></textarea>
+                    
+                    <button class="glow-btn" id="save-btn">
+                        <i class="fa-solid fa-shield-halved"></i> Secure & Transmit
+                    </button>
+                </div>
+
+                <div class="glass-panel search-section">
+                    <h2><i class="fa-solid fa-satellite-dish"></i> Code Radar</h2>
+                    <div class="input-group">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search-box" placeholder="Search your database...">
+                    </div>
+                    
+                    <div id="codes-display-area" style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
+                        <div class="empty-state" id="empty-state-msg">
+                            <i class="fa-solid fa-fingerprint"></i>
+                            <p>Identity Verified. Awaiting commands.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
