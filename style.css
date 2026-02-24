@@ -1,0 +1,564 @@
+/* =========================================================
+   GLOBAL RESETS & BODY
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(ellipse at top, #060b14 0%, #000000 100%);
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================================
+   SOCIAL JUSTICE BANNER
+========================================================= */
+.justice-banner {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    padding: 15px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    box-shadow: 0 4px 30px rgba(0, 240, 255, 0.1);
+    margin-bottom: 2rem;
+}
+
+.hadi-text {
+    color: #ff2a4d;
+    text-shadow: 0 0 15px rgba(255, 42, 77, 0.8);
+}
+
+.palestine-text {
+    background: linear-gradient(to right, #10b981, #ffffff, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
+}
+
+.separator {
+    color: #00f0ff;
+    margin-left: 25px;
+    margin-right: 25px;
+    opacity: 0.5;
+}
+
+/* =========================================================
+   CINEMATIC INTRO SCREEN
+========================================================= */
+#intro-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.welcome-text {
+    font-family: 'Fira Code', monospace;
+    color: #00f0ff;
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInSlow 1.5s ease forwards 0.5s;
+}
+
+.cinematic-name {
+    font-size: 6.5rem;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    animation: supernovaBlast 2.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards, extremePulse 2s infinite alternate 2.5s;
+}
+
+.cinematic-uni {
+    font-size: 2.2rem;
+    color: #10b981;
+    letter-spacing: 12px;
+    margin-top: 20px;
+    opacity: 0;
+    font-weight: 600;
+    animation: fadeInSlow 1.5s ease forwards 2s;
+    text-shadow: 0 0 20px #10b981;
+}
+
+.loader-bar {
+    width: 350px;
+    height: 3px;
+    background: rgba(0, 240, 255, 0.1);
+    margin-top: 50px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInSlow 1s ease forwards 2.5s;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff00c8, #00f0ff, #10b981);
+    animation: laserLoad 3s cubic-bezier(0.4, 0, 0.2, 1) forwards 2.5s;
+    box-shadow: 0 0 30px #00f0ff;
+}
+
+@keyframes supernovaBlast {
+    0% { opacity: 0; letter-spacing: 50px; filter: blur(30px) brightness(5); transform: scale(1.5); }
+    50% { opacity: 1; filter: blur(5px) brightness(2); transform: scale(1.05); }
+    100% { opacity: 1; letter-spacing: 5px; filter: blur(0) brightness(1); transform: scale(1); }
+}
+
+@keyframes extremePulse {
+    0% { text-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff; transform: scale(1); }
+    50% { text-shadow: 0 0 30px #ff00c8, 0 0 60px #ff00c8; transform: scale(1.02); }
+    100% { text-shadow: 0 0 15px #10b981, 0 0 30px #10b981; transform: scale(1); }
+}
+
+@keyframes fadeInSlow { to { opacity: 1; } }
+@keyframes laserLoad { 0% { width: 0%; transform: translateX(-100%); } 100% { width: 100%; transform: translateX(100%); } }
+
+/* =========================================================
+   PROFESSIONAL HEADER
+========================================================= */
+#main-app { padding-bottom: 4rem; animation: appFadeIn 2s ease-in; }
+@keyframes appFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.profile-header { text-align: center; margin-bottom: 4.5rem; margin-top: 2rem; }
+
+.colorful-heading {
+    font-size: 3.8rem; font-weight: 900; font-family: 'Montserrat', sans-serif; text-transform: uppercase;
+    background: linear-gradient(to right, #00f0ff, #ff00c8, #00f0ff); background-size: 200% auto;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: elegantShine 3s linear infinite; letter-spacing: 3px; margin-bottom: 15px;
+    filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.4));
+}
+
+@keyframes elegantShine { to { background-position: 200% center; } }
+
+.profile-header p { color: #00f0ff; font-family: 'Fira Code', monospace; font-size: 1.1rem; margin-bottom: 30px; letter-spacing: 1px; opacity: 0.8; }
+
+.linkedin-btn {
+    display: inline-block; background: rgba(0, 240, 255, 0.1); color: #00f0ff; border: 1px solid #00f0ff;
+    text-decoration: none; padding: 12px 30px; border-radius: 6px; font-weight: 800; font-family: 'Inter', sans-serif;
+    letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+.linkedin-btn:hover { background: #00f0ff; color: #000; box-shadow: 0 0 30px #00f0ff; transform: translateY(-3px) scale(1.05); }
+
+/* =========================================================
+   HOMEPAGE GRID & PRE-HOVER (CLEAN VIBRANT COLORS & ANIMATION)
+========================================================= */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    perspective: 1500px; /* Strong 3D perspective */
+}
+
+.lang-card {
+    position: relative;
+    background: rgba(10, 15, 30, 0.8);
+    border-radius: 15px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid rgba(0, 240, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    
+    /* Continuous floating animation */
+    animation: constantLevitate 4s ease-in-out infinite alternate;
+}
+
+.lang-card:nth-child(even) { animation-delay: -2s; }
+
+@keyframes constantLevitate {
+    0% { transform: translateY(0) rotateX(2deg); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+    100% { transform: translateY(-15px) rotateX(-2deg); box-shadow: 0 20px 40px rgba(0, 240, 255, 0.15); }
+}
+
+/* Pre-hover moving Akashi/Dark Blue border (Lots of animation, but clean) */
+.lang-card::before {
+    content: ''; position: absolute; inset: -2px; border-radius: 17px;
+    background: linear-gradient(45deg, transparent, #00f0ff, transparent, #00599c);
+    background-size: 300% 300%;
+    z-index: -1; opacity: 0.7; filter: blur(5px);
+    animation: hyperSpeedAkashi 3s linear infinite;
+}
+
+@keyframes hyperSpeedAkashi {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.icon-wrapper {
+    width: 90px; height: 90px; border-radius: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex; justify-content: center; align-items: center;
+    margin-bottom: 20px;
+    transform: translateZ(30px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+    /* Constant pulsing wrapper */
+    animation: wrapperPulse 2s infinite alternate;
+}
+
+@keyframes wrapperPulse {
+    from { box-shadow: inset 0 0 10px rgba(255,255,255,0.02); }
+    to { box-shadow: inset 0 0 20px rgba(255,255,255,0.1); }
+}
+
+/* Original colors kept intact without messy filters! */
+.lang-icon {
+    font-size: 4rem;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 10px currentColor);
+    /* Bouncing icon animation */
+    animation: iconBounce 2s infinite alternate ease-in-out;
+}
+
+@keyframes iconBounce {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-8px) scale(1.05); }
+}
+
+.lang-card h2 {
+    color: #ffffff; font-size: 1.5rem; font-weight: 900;
+    letter-spacing: 2px; transform: translateZ(20px);
+    transition: all 0.3s ease;
+}
+
+/* =========================================================
+   🔥 EXTREME AKASHI (CYAN) HOVER EFFECTS 🔥
+========================================================= */
+.lang-card:hover {
+    animation-play-state: paused; /* Stop floating to pop out */
+    transform: translateY(-25px) scale(1.15) rotateX(20deg) rotateY(-15deg) !important;
+    background: rgba(0, 30, 50, 0.95); /* Deep Akashi Tint */
+    border-color: #00f0ff;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.8), 
+                0 -10px 40px rgba(0, 240, 255, 0.5), 
+                inset 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+.lang-card:hover::before {
+    opacity: 1; filter: blur(20px);
+    background: #00f0ff; /* Pure Akashi Explosion */
+    animation: akashiBlast 1s infinite alternate;
+}
+
+@keyframes akashiBlast {
+    from { filter: blur(15px); opacity: 0.8; }
+    to { filter: blur(30px); opacity: 1; box-shadow: 0 0 50px #00f0ff; }
+}
+
+.lang-card:hover .icon-wrapper {
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow: inset 0 0 40px #00f0ff;
+    border-color: #00f0ff;
+}
+
+/* The Oashadharon Akashi 360 Spin */
+.lang-card:hover .lang-icon {
+    animation: none; /* Stop the bounce to spin! */
+    transform: scale(1.5) rotateY(360deg) translateZ(50px);
+    /* Forcing pure AKASHI color on hover! */
+    color: #00f0ff !important;
+    filter: drop-shadow(0 0 30px #00f0ff) drop-shadow(0 0 60px #ffffff);
+}
+
+.lang-card:hover h2 {
+    color: #00f0ff;
+    text-shadow: 0 0 20px #00f0ff, 0 0 40px #ffffff;
+    transform: translateZ(50px) scale(1.2);
+}
+
+/* =========================================================
+   VAULT ROOM: EXTREME AKASHI (CYAN) ENVIRONMENT
+========================================================= */
+.vault-header {
+    text-align: center;
+    font-size: 3.8rem;
+    font-weight: 900;
+    margin-bottom: 3rem;
+    color: #00f0ff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+    animation: akashiFlicker 3s infinite alternate;
+}
+
+@keyframes akashiFlicker {
+    0% { text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff; }
+    100% { text-shadow: 0 0 40px #00f0ff, 0 0 80px #00f0ff, 0 0 100px #ffffff; }
+}
+
+.back-btn {
+    background: rgba(0, 240, 255, 0.1);
+    color: #00f0ff;
+    border: 2px solid #00f0ff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Fira Code', monospace;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.back-btn:hover {
+    background: #00f0ff;
+    color: #000000;
+    box-shadow: 0 0 40px #00f0ff;
+    transform: translateX(-8px) scale(1.05);
+}
+
+.vault-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+/* Giant Akashi Aura Background inside Vault */
+.vault-container::before {
+    content: '';
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.25) 0%, transparent 65%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: blur(80px);
+    animation: akashiPulseAura 4s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes akashiPulseAura {
+    from { opacity: 0.6; transform: translate(-50%, -50%) scale(0.9); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* =========================================================
+   VAULT GLASS PANELS (HEAVY CYAN BREATHE & SCANLINE)
+========================================================= */
+.glass-panel {
+    position: relative;
+    overflow: hidden;
+    background: rgba(0, 25, 40, 0.75); /* Very deep Akashi tint */
+    border: 2px solid #00f0ff;
+    backdrop-filter: blur(25px);
+    border-radius: 15px;
+    padding: 3.5rem;
+    /* Extreme Cyan Breathing */
+    animation: akashiHologramBreathe 2s infinite alternate ease-in-out;
+}
+
+/* Cyberpunk Akashi Scanline Effect */
+.glass-panel::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 240, 255, 0.3), transparent);
+    animation: akashiScanLine 5s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes akashiScanLine {
+    0% { top: -100%; }
+    100% { top: 200%; }
+}
+
+@keyframes akashiHologramBreathe {
+    0% {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 
+                    0 0 20px rgba(0, 240, 255, 0.3), 
+                    inset 0 0 20px rgba(0, 240, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 
+                    0 0 60px rgba(0, 240, 255, 0.8), 
+                    inset 0 0 50px rgba(0, 240, 255, 0.5);
+        border-color: #ffffff;
+    }
+}
+
+.glass-panel h2 {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid rgba(0, 240, 255, 0.6);
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+}
+
+/* =========================================================
+   EXTREME CYAN INPUTS & FORMS
+========================================================= */
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: #00f0ff;
+    font-size: 1.3rem;
+    text-shadow: 0 0 15px #00f0ff;
+    transition: all 0.3s ease;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 18px 18px 18px 60px;
+    background: rgba(0, 30, 50, 0.7);
+    border: 2px solid rgba(0, 240, 255, 0.4);
+    color: #ffffff;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+textarea {
+    width: 100%;
+    padding: 25px;
+    background: rgba(0, 30, 50, 0.7);
+    border: 2px solid rgba(0, 240, 255, 0.4);
+    color: #ffffff;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1rem;
+    height: 350px;
+    resize: none;
+    margin-bottom: 2.5rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+    outline: none;
+    border-color: #ffffff;
+    background: rgba(0, 50, 80, 0.9);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.8), 
+                inset 0 0 25px rgba(0, 240, 255, 0.6);
+}
+
+.input-group input:focus + i, 
+.input-group select:focus + i {
+    color: #ffffff;
+    text-shadow: 0 0 20px #ffffff, 0 0 40px #00f0ff;
+    transform: scale(1.2);
+}
+
+/* =========================================================
+   MASSIVE AKASHI GLOW BUTTON
+========================================================= */
+.glow-btn {
+    background: linear-gradient(90deg, #00599c, #00f0ff, #00599c);
+    background-size: 200% auto;
+    color: #ffffff;
+    border: 2px solid #00f0ff;
+    padding: 20px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    width: 100%;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+    animation: btnShine 3s linear infinite;
+}
+
+@keyframes btnShine {
+    to { background-position: 200% center; }
+}
+
+.glow-btn:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    box-shadow: 0 0 60px #00f0ff, 
+                0 0 100px #00f0ff, 
+                inset 0 0 20px rgba(0, 240, 255, 1);
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* =========================================================
+   EMPTY STATE RADAR
+========================================================= */
+.empty-state {
+    text-align: center;
+    color: #00f0ff;
+    margin-top: 6rem;
+    opacity: 0.8;
+    animation: pulseIconAkashi 1.5s infinite alternate;
+}
+
+.empty-state i {
+    font-size: 7rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 30px #00f0ff, 0 0 60px #00f0ff;
+}
+
+@keyframes pulseIconAkashi {
+    from {
+        opacity: 0.6;
+        transform: scale(0.95);
+        text-shadow: 0 0 20px #00f0ff;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.05);
+        text-shadow: 0 0 50px #00f0ff, 0 0 80px #ffffff;
+    }
+}
