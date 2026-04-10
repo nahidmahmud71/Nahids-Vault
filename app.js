@@ -1,22 +1,22 @@
-// ফায়ারবেস ইমপোর্ট
+// Firebase Imports
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
-// আপনার ফায়ারবেস কনফিগারেশন
+// Firebase Configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAt-H95VSOCGe6yAxSZe-mVHNukT0YgwS4",
-  authDomain: "nahids-vault.firebaseapp.com",
-  projectId: "nahids-vault",
-  storageBucket: "nahids-vault.firebasestorage.app",
-  messagingSenderId: "652335808665",
-  appId: "1:652335808665:web:41383acadf92ed0c1ab808",
-  measurementId: "G-T7RRS1202Z"
+    apiKey: "AIzaSyAt-H95VSOCGe6yAxSZe-mVHNukT0YgwS4",
+    authDomain: "nahids-vault.firebaseapp.com",
+    projectId: "nahids-vault",
+    storageBucket: "nahids-vault.firebasestorage.app",
+    messagingSenderId: "652335808665",
+    appId: "1:652335808665:web:41383acadf92ed0c1ab808",
+    measurementId: "G-T7RRS1202Z"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// অ্যানিমেশন এবং নেভিগেশন লজিক
+// Animation and Navigation Logic
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const introScreen = document.getElementById('intro-screen');
