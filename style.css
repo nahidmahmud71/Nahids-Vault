@@ -343,11 +343,9 @@ body {
 ========================================================= */
 .lang-card:hover {
     animation-play-state: paused; 
-    /* সোজা আপনার দিকে পপ-আপ করবে */
     transform: translateY(-30px) scale(1.18) rotateX(10deg) rotateY(0deg) !important;
     background: rgba(0, 15, 30, 0.95);
     border-color: #ffffff;
-    /* আকাশী এবং পিংক কালারের মারাত্মক মিক্সড গ্লো */
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.9), 
                 0 0 40px #00f0ff, 
                 0 0 80px rgba(0, 240, 255, 0.6),
@@ -359,7 +357,6 @@ body {
     filter: blur(20px); 
     background: linear-gradient(45deg, #00f0ff, #ff00c8, #10b981, #00f0ff);
     background-size: 400% 400%;
-    /* সুপার ফাস্ট বর্ডার লেজার */
     animation: hyperSpeedAkashi 0.5s linear infinite; 
 }
 
@@ -371,7 +368,6 @@ body {
 
 .lang-card:hover .lang-icon {
     animation: none;
-    /* চাকার মতো ঘুরে পপ-আপ করবে */
     transform: scale(1.6) rotateZ(360deg) translateZ(60px);
     color: #ffffff !important;
     filter: drop-shadow(0 0 40px #00f0ff) drop-shadow(0 0 80px #ff00c8);
